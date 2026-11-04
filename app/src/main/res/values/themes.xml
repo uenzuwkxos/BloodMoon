@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.BloodMoon" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <!-- Neutral dark background instead of the platform default, so the brief flash before
+             Compose's first frame doesn't look like a glitch regardless of the chosen theme. -->
+        <item name="android:windowBackground">@color/window_background_neutral</item>
+    </style>
+
+    <!-- App-launch-only theme: pure black background with the centered logo. MainActivity switches
+         to Theme.BloodMoon in onCreate (setTheme before super.onCreate). -->
+    <style name="Theme.BloodMoon.Starting" parent="Theme.BloodMoon">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+</resources>

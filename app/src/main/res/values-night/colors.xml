@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Window background before the first Compose frame, when the system is in dark mode (matches
+         the Dark theme; avoids a white flash when opening the app). -->
+    <color name="window_background_neutral">#130F10</color>
+</resources>

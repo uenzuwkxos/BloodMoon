@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Logo da tela inicial: a mesma lua crescente do ícone, mas desenhada como forma recortada de
+     verdade (círculo da lua menos o círculo da "mordida"), sem um disco de cor sólida por cima -
+     assim fica correta sobre o preto puro da tela inicial. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:pathData="M78.36,69.52 A30,30 0 1,1 36.48,27.64 A32,32 0 0,0 78.36,69.52 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="42"
+                android:centerY="62"
+                android:gradientRadius="46"
+                android:startColor="#F0455E"
+                android:centerColor="#C41E3A"
+                android:endColor="#6E0B1C" />
+        </aapt:attr>
+    </path>
+</vector>

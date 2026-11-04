@@ -1,0 +1,245 @@
+<resources>
+    <string name="app_name">Blood Moon</string>
+
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_close">Close</string>
+    <string name="action_save">Save</string>
+    <string name="action_confirm">Confirm</string>
+    <string name="action_activate">Activate</string>
+    <string name="action_deactivate">Deactivate</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_resume">Resume</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_profiles">Profiles</string>
+    <string name="nav_schedule">Schedule</string>
+    <string name="nav_exclusions">Exclusions</string>
+    <string name="nav_settings">Settings</string>
+
+    <string name="color_red">Red</string>
+    <string name="color_yellow">Yellow</string>
+    <string name="color_black">Black</string>
+    <string name="color_orange">Orange</string>
+
+    <string name="home_toggle_filter">Turn the filter on or off</string>
+    <string name="home_quick_adjustments">Adjustments</string>
+    <string name="home_advanced_features">Advanced features</string>
+    <string name="home_filter_color">Filter color</string>
+    <string name="home_intensity">Intensity</string>
+    <string name="home_tone">Tone</string>
+    <string name="home_double_filter_toggle">Double filter</string>
+    <string name="home_double_filter_desc">Stacks a second layer identical to the main filter, making the colors even stronger</string>
+    <string name="home_grayscale_title">Grayscale</string>
+    <string name="home_grayscale_desc">Turns the whole screen black and white, applied by the system itself</string>
+    <string name="home_system_filter_title">System Filter</string>
+    <string name="home_system_filter_desc">Changes the system\'s RGB colors directly. Requires Root.</string>
+    <string name="home_privileged_toggle_needs_setup">Requires ADB, Shizuku or Root.</string>
+    <string name="home_extra_dim_unsupported_version">Requires Android 12 or newer</string>
+    <string name="home_privileged_toggle_needs_setup_no_adb">Requires Shizuku or Root to work (ADB isn\'t enough). Tap to set up in Options.</string>
+
+    <!-- Navigation: bar position -->
+    <string name="profiles_create">Create profile</string>
+    <string name="profiles_empty">No profiles saved yet. Adjust the filter on the Home screen and tap + to save the current configuration as a profile.</string>
+    <string name="profiles_save_current">Save current configuration</string>
+    <string name="profiles_enter_name">Give this profile a name:</string>
+    <string name="profiles_name_label">Profile name</string>
+    <string name="profiles_active_badge">Active profile</string>
+    <string name="profiles_summary">%1$s %2$d%% • Tone %3$d%%</string>
+    <string name="schedule_enable">Schedule times</string>
+    <string name="schedule_enable_desc">Turns the filter on and off by itself, at the times set below</string>
+    <string name="schedule_sunset_sunrise">Sunset and sunrise</string>
+    <string name="schedule_sunset_sunrise_desc">Uses your approximate location to calculate the times automatically</string>
+    <string name="schedule_sunset">Sunset</string>
+    <string name="schedule_sunrise">Sunrise</string>
+    <string name="schedule_exact_alarm_title">Exact alarm permission needed</string>
+    <string name="schedule_exact_alarm_body">Without it, Android may delay turning the filter on/off by a few minutes.</string>
+    <string name="schedule_exact_alarm_action">Grant permission</string>
+    <string name="schedule_grant_location">Open app permissions</string>
+    <string name="schedule_pick_time">Pick a time</string>
+    <string name="schedule_hour_label">Hour</string>
+    <string name="schedule_minute_label">Minute</string>
+    <string name="schedule_minute_step_label">Step: %1$d min</string>
+    <string name="exclusions_usage_access_title">Usage access needed</string>
+    <string name="exclusions_usage_access_body">To detect which app is in the foreground, Blood Moon needs the system Usage Access permission (or the app\'s accessibility service turned on).</string>
+    <string name="exclusions_usage_access_action">Grant usage access</string>
+    <string name="exclusions_search_placeholder">Search installed apps</string>
+    <string name="exclusions_selected_count">%1$d app(s) selected</string>
+    <string name="exclusions_select_all">Select all</string>
+    <string name="exclusions_deselect_all">Deselect all</string>
+    <string name="exclusions_empty">No apps found</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_theme_mode">Theme</string>
+    <string name="theme_auto">Auto</string>
+    <string name="theme_light">Light Theme</string>
+    <string name="theme_black">Black Theme</string>
+    <string name="theme_dark">Dark Theme</string>
+
+    <string name="settings_language">Language</string>
+    <string name="language_system">System language</string>
+
+    <string name="settings_behavior">Behavior</string>
+    <string name="settings_pause_on_reboot">Pause on reboot</string>
+    <string name="settings_pause_on_reboot_desc">Doesn\'t automatically turn the filter back on after the device reboots</string>
+    <string name="settings_fade_duration">Fade duration</string>
+    <string name="settings_fade_duration_desc">How long the filter takes to smoothly fade in and out when toggled, resumed, or adjusted</string>
+    <string name="settings_fade_duration_value">%.1fs</string>
+
+    <string name="settings_advanced">Advanced features</string>
+    <string name="settings_advanced_explainer">Root, Shizuku, and ADB all grant the exact same system permission (WRITE_SECURE_SETTINGS) through different paths - use whichever one you have.</string>
+    <string name="settings_shizuku">Shizuku</string>
+    <string name="settings_shizuku_available">Shizuku ready and permission granted</string>
+    <string name="settings_shizuku_no_permission">Shizuku detected, but permission not granted yet - turn the switch on to request it</string>
+    <string name="settings_shizuku_unavailable">Shizuku is not installed or not running</string>
+    <string name="settings_shizuku_request">Ask Shizuku for permission</string>
+    <string name="settings_shizuku_dialog_prompt_toast">Tap to see Shizuku\'s permission prompt</string>
+    <string name="settings_shizuku_granted_toast">Shizuku enabled successfully</string>
+    <string name="settings_shizuku_denied_toast">Permission denied in the Shizuku dialog</string>
+    <string name="settings_shizuku_required_title">Shizuku required</string>
+    <string name="settings_shizuku_required_desc">Blood Moon uses Shizuku to adjust system settings without needing root. Follow the steps below:</string>
+    <string name="settings_shizuku_step_install">Install the Shizuku app</string>
+    <string name="settings_shizuku_step_start">Start the Shizuku service</string>
+    <string name="settings_shizuku_step_grant">Grant permission for Blood Moon in Shizuku</string>
+    <string name="settings_root_granted_toast">Root enabled successfully</string>
+    <string name="settings_root_denied_toast">Root access denied or unavailable</string>
+    <string name="settings_root">Root</string>
+    <string name="settings_root_checking">Checking root access…</string>
+    <string name="settings_root_available">Root access available</string>
+    <string name="settings_root_unavailable">Root access not available on this device</string>
+    <string name="settings_adb">ADB</string>
+    <string name="settings_adb_ready">Permission granted</string>
+    <string name="settings_adb_not_ready">Tap to see the command</string>
+    <string name="settings_adb_panel_title">Grant via ADB</string>
+    <string name="settings_share_command">Share</string>
+    <string name="settings_extra_dim">System-level extra dim</string>
+    <string name="settings_grant_permission">Grant permission now</string>
+    <string name="settings_permission_granted">Permission granted successfully</string>
+    <string name="settings_needs_restart">The command ran, but the app needs to restart to recognize the new permission. Close and reopen Blood Moon.</string>
+    <string name="settings_adb_info_body">No root or Shizuku? Run this command once, with your phone connected to a computer:</string>
+    <string name="settings_copy_command">Copy command</string>
+    <string name="settings_command_copied">Command copied</string>
+    <string name="settings_system_color_adjustment">Real system-level color calibrator</string>
+    <string name="settings_system_color_adjustment_desc">Uses Android\'s native color inversion, applied by the compositor - reaches the whole screen, status bar and quick settings included.</string>
+
+    <string name="settings_backup">Backup and restore</string>
+    <string name="settings_backup_desc">Saves a .json file with all your settings, profiles, schedules, and exclusions - keep it wherever you like.</string>
+    <string name="settings_export">Export</string>
+    <string name="settings_export_success">Backup saved successfully</string>
+    <string name="settings_export_failed">Could not save the file</string>
+    <string name="settings_import">Import</string>
+    <string name="settings_import_title">Import configuration</string>
+    <string name="settings_import_read_failed">Could not read the selected file</string>
+    <string name="settings_import_success">Configuration restored successfully</string>
+
+    <string name="settings_about_button">About Blood Moon</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_synopsis">Filter for blue light, eye strain and screen dimmer.</string>
+    <string name="about_privacy_title">Privacy Policy</string>
+    <string name="about_privacy">This app does not collect, store, or transmit any personal data. All settings are saved only on this device.</string>
+    <string name="about_license">Distributed under the GPL-3.0-or-later license.</string>
+    <string name="about_repo_link">Repository link (coming soon)</string>
+    <string name="about_repo_title">Repository</string>
+
+    <string name="notification_channel_name">Screen filter</string>
+    <string name="notification_channel_description">Shows the screen filter\'s status while it\'s active</string>
+    <string name="notification_active">Filter active</string>
+    <string name="notification_paused">Filter paused</string>
+    <string name="notification_off">Filter off</string>
+    <string name="notification_permission_missing">Allow "Display over other apps" in settings for the filter to work</string>
+
+    <string name="widget_status_active">Blood Moon: ON (%1$d%%)</string>
+    <string name="widget_status_paused">Blood Moon: PAUSED</string>
+    <string name="widget_status_off">Blood Moon: OFF</string>
+    <string name="widget_hint">Tap to open or toggle</string>
+
+    <string-array name="day_abbreviations">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
+    <!-- Adicionadas/atualizadas -->
+    <string name="home_system_filter_needs_root">Requires Root.</string>
+    <string name="settings_tv_power_title">TV features</string>
+    <string name="settings_tv_power_explainer">Android TV only - uses the same access granted above (Root, Shizuku or ADB) to turn the TV off automatically.</string>
+    <string name="settings_tv_auto_off_title">Turn off at a set time</string>
+    <string name="settings_tv_auto_off_desc_on">Turns off every day at %1$s</string>
+    <string name="settings_tv_auto_off_desc_off">Off</string>
+    <string name="settings_tv_auto_off_change_time">Change time</string>
+    <string name="settings_tv_standby_title">Sleep timer</string>
+    <string name="settings_tv_standby_desc">Turn off when inactive</string>
+    <string name="settings_tv_standby_minutes_value">%1$d min</string>
+    <string name="about_oss_licenses_title">Open-source licenses</string>
+    <string name="about_oss_licenses_screen_title">Open-source licenses</string>
+    <string name="about_screen_title">About</string>
+    <string name="about_oss_license_heading">License</string>
+    <string name="about_oss_license_none">No license information provided by the library</string>
+    <string name="about_oss_license_view">View license text</string>
+    <string name="about_oss_license_website">Open library website</string>
+
+    <string name="accessibility_service_label">Blood Moon</string>
+    <string name="accessibility_service_description">Keeps grayscale active while the filter is on and lets the TV screen turn off at the scheduled time. It does not read or collect screen content.</string>
+
+    <string name="settings_a11y_overlay_title">Use accessibility service (recommended)</string>
+    <string name="settings_a11y_overlay_desc">Draws the filter through the accessibility service: covers the whole system and isn\'t dropped by other apps. Turns on by itself with ADB, Shizuku or Root.</string>
+
+    <string name="settings_diagnostic_title">Diagnostics</string>
+    <string name="settings_diagnostic_desc">Useful to investigate when the filter turns off by itself.</string>
+    <string name="settings_diagnostic_view">View diagnostic log</string>
+    <string name="settings_diagnostic_share">Share log</string>
+    <string name="settings_diagnostic_clear">Clear log</string>
+
+    <string name="exclusions_chip_filter">Filter</string>
+    <string name="exclusions_chip_grayscale">Grayscale</string>
+    <string name="exclusions_chip_system">System</string>
+
+    <string name="home_stable_mode_title">Turn on the accessibility service</string>
+    <string name="home_stable_mode_body">Without it, the filter can be dropped by the system or other apps and doesn\'t cover the whole system (like Settings), even with ADB or Shizuku active.</string>
+    <string name="home_stable_mode_action">Open accessibility settings</string>
+
+    <string name="tile_subtitle_active">On · %1$d%%</string>
+    <string name="tile_subtitle_paused">Paused</string>
+    <string name="tile_subtitle_off">Off</string>
+
+    <string name="widget_opt_double">Double</string>
+    <string name="widget_opt_grayscale">Gray</string>
+    <string name="widget_opt_dim">Extra</string>
+    <string name="widget_opt_system">System</string>
+
+    <string name="notification_active_hint">Tap to open</string>
+
+    <string name="home_extra_dim_desc">Turns on a system option to make the screen even darker.</string>
+    <string name="settings_tv_auto_off_desc">Turn off at a specific time</string>
+    <string name="settings_tv_auto_off_change_time_with">Change time (%1$s)</string>
+    <string name="home_stable_mode_dismiss">Not now</string>
+    <string name="exclusions_mark_all_filter">Mark all (Filter)</string>
+    <string name="exclusions_unmark_all_filter">Unmark all (Filter)</string>
+    <string name="exclusions_mark_all_grayscale">Mark all (Grayscale)</string>
+    <string name="exclusions_unmark_all_grayscale">Unmark all (Grayscale)</string>
+    <string name="exclusions_include_system">Include system apps</string>
+    <string name="settings_adb_disabled">Off (the permission remains granted in the system)</string>
+    <string name="settings_help_title">Help</string>
+    <string name="settings_help_a11y_q">Why is accessibility needed?</string>
+    <string name="settings_help_a11y_a">The accessibility service improves the experience. With it on, the filter is drawn on a layer above regular windows and can cover the whole system (Settings, permission dialogs and other blocked screens) - something the normal overlay can\'t do, even with ADB or Shizuku. It also prevents the overlay from being closed or attacked by other system apps or by the system itself. The app does not read or collect screen content.</string>
+    <string name="settings_help_random_q">Why does the filter turn off out of nowhere?</string>
+    <string name="settings_help_random_a">Some devices (mainly TVs) have bloatware or system apps that close regular floating windows, or the system itself drops them. To fix this, Blood Moon needs the accessibility permission. If you don\'t want to grant it, or you did and an app still interferes, report the problem on the project\'s GitHub or find that app and remove it at your own risk - Diagnostics helps identify it.</string>
+
+    <string name="schedule_profiles_title">Scheduled profile</string>
+    <string name="schedule_profiles_desc">Activate a saved profile at a time and on the weekdays you choose. Optionally, set an end time to turn the filter off.</string>
+    <string name="schedule_profiles_use_end">Set an end time</string>
+    <string name="schedule_profiles_pick">Choose a profile</string>
+    <string name="schedule_profiles_add">Add</string>
+    <string name="schedule_profiles_empty">No profile schedules saved.</string>
+    <string name="schedule_profiles_no_profiles">Save a profile in the Profiles tab to be able to schedule it.</string>
+    <string name="schedule_profiles_removed">Profile removed</string>
+    <string name="schedule_profiles_apply_on_boot">Apply latest schedule on start</string>
+    <string name="schedule_profiles_apply_on_boot_desc">Useful if the device was off at the scheduled time.</string>
+    <string name="duration_minutes">%1$d min</string>
+    <string name="duration_hours">%1$dh</string>
+    <string name="duration_hours_minutes">%1$dh %2$dmin</string>
+</resources>

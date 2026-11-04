@@ -1,0 +1,15 @@
+Blue light may suppress the production of melatonin, the sleep hormone. Blood Moon filters out blue light and dims your screen below the normal minimum, so you can use your phone comfortably at night.
+
+Features:
+
+- Schedule Blood Moon to run at custom times.
+- Adjust dimming, tone, and color intensity independently, or save your favorite combinations as profiles.
+- Grayscale and Redscale, applied at the system level.
+- Automatically pause in apps secured against overlays, or those you choose.
+- Quickly start, stop, and switch profiles via notification or widget.
+
+Permissions:
+
+- Modify system settings: To automatically lower the screen brightness when the filter is on
+- Draw over other apps: To change the color and brightness of the screen in all apps
+- Run at startup: To restore the previous filter state at startup

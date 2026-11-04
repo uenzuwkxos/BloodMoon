@@ -1,0 +1,23 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    // AGP 9.x has built-in Kotlin - confirmed in the official documentation
+    // (developer.android.com/build/migrate-to-built-in-kotlin): "AGP 9.0 already enables built-in
+    // Kotlin for all modules where you apply AGP, so you don't need to do anything to enable it".
+    // The org.jetbrains.kotlin.android plugin (used up to this project's previous version) was
+    // removed from here on purpose - it conflicts with built-in Kotlin and does not coexist with
+    // it. The Compose Compiler (before configured via kotlinCompilerExtensionVersion inside
+    // composeOptions, a scheme deprecated from Kotlin 2.0) is now this separate plugin, at the same
+    // Kotlin version.
+    id 'com.android.application' version '9.1.1' apply false
+    id 'org.jetbrains.kotlin.plugin.compose' version '2.4.20' apply false
+    // Open Source Licenses (About) - reintroduced after being dropped by mistake: the ID used
+    // before (com.mikepenz.aboutlibraries.plugin.android) was wrong - the correct, current ID is
+    // com.mikepenz.aboutlibraries.plugin, with no ".android" at the end (confirmed by reading the
+    // real build.gradle.kts of the InstallerX-Revived app, which uses the same version 15.2.0 with
+    // AGP 9.4.0, even newer than this project's, working for real in production).
+    id 'com.mikepenz.aboutlibraries.plugin' version '15.2.0' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

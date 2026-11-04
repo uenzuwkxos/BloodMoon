@@ -1,0 +1,194 @@
+plugins {
+    id 'com.android.application'
+    // Kotlin built into AGP 9.x (see the full comment in the root build.gradle) - replaces
+    // org.jetbrains.kotlin.android, which was removed from here.
+    id 'org.jetbrains.kotlin.plugin.compose'
+    // Open Source Licenses (About) - see the full comment in the root build.gradle about the
+    // correct plugin ID (without ".android").
+    id 'com.mikepenz.aboutlibraries.plugin'
+}
+
+// RELEASE signing: reads keystore.properties from the root (a file kept out of Git - see
+// .gitignore) or, on CI, the environment variables KEYSTORE_FILE, KEYSTORE_PASSWORD, KEY_ALIAS and
+// KEY_PASSWORD (GitHub Secrets). With neither, the release falls back to the debug keystore, just
+// for local testing.
+def keystoreProps = new Properties()
+def keystorePropsFile = rootProject.file('keystore.properties')
+if (keystorePropsFile.exists()) {
+    keystorePropsFile.withInputStream { keystoreProps.load(it) }
+}
+def releaseStoreFile = keystoreProps['storeFile'] ?: System.getenv('KEYSTORE_FILE')
+def hasReleaseKey = releaseStoreFile != null
+
+android {
+    namespace 'com.bloodmoon.app'
+    // 37: required by Compose BOM 2026.08.00 (officially announced on the Android Developers blog
+    // on 08/12/2026: "Compose 1.12 updates compileSdk to API 37, requiring a minimum AGP 9.1.1").
+    compileSdk 37
+
+    // Debug keystore signing on the release build type too - purely so `assembleRelease` +
+    // `adb install` works for local testing (measuring the real minified/shrunk APK size, which
+    // `assembleDebug` never reflects since minifyEnabled/shrinkResources only apply to release).
+    // This is NOT a real release signing key - before actually publishing, replace this with a
+    // proper release keystore (keytool -genkey, kept private, never committed) or this build
+    // will keep signing with the shared, publicly-known debug key.
+    signingConfigs {
+        debug {
+            // AGP's own default debug.keystore path/credentials (~/.android/debug.keystore,
+            // password "android", alias "androiddebugkey") - same file Android Studio already
+            // auto-generates and signs every debug build with, just referenced explicitly here
+            // so release can reuse it too.
+            storeFile file(System.getProperty("user.home") + "/.android/debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+        release {
+            if (hasReleaseKey) {
+                storeFile file(releaseStoreFile)
+                storePassword keystoreProps['storePassword'] ?: System.getenv('KEYSTORE_PASSWORD')
+                keyAlias keystoreProps['keyAlias'] ?: System.getenv('KEY_ALIAS')
+                keyPassword keystoreProps['keyPassword'] ?: System.getenv('KEY_PASSWORD')
+            }
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.bloodmoon.app"
+        minSdk 28
+        targetSdk 37
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+
+        // Only the languages listed here are shipped/resolved. This is the piece that actually
+        // enforces it, not just the Settings dropdown: without it, a phone whose SYSTEM language
+        // has no matching entry here would not resolve to the corresponding values-XX folder when
+        // the in-app language is left on "Automatic" (system default). Every language with a
+        // values-XX folder must be listed here, otherwise AGP discards its resources and the final
+        // app is missing that language ("in" is the legacy code Android uses for Indonesian, folder
+        // values-in).
+        resourceConfigurations += ["pt", "en", "es", "de", "fr", "zh", "ja", "ko", "hi", "ar", "ru", "in", "it", "nl", "pl"]
+    }
+
+    buildTypes {
+        release {
+            // Enabled now that the Gson/Shizuku/libsu/widget rules above exist in
+            // proguard-rules.pro - without them, this would silently break exported backups and
+            // Shizuku/widget themselves (see the comments there). shrinkResources depends on
+            // minifyEnabled (documented by AGP itself: it only removes resources that R8 has
+            // already proven are not referenced in any code) - which is why the two come together
+            // here, never one without the other.
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // With a release keystore configured (keystore.properties or CI environment variables)
+            // it signs with it; otherwise it uses the debug keystore - good for testing with `adb
+            // install`, but NOT for publishing (the debug key is public and the same for
+            // everybody).
+            signingConfig hasReleaseKey ? signingConfigs.release : signingConfigs.debug
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    buildFeatures {
+        compose true
+        aidl true
+        buildConfig true
+    }
+    // composeOptions { kotlinCompilerExtensionVersion '1.5.8' } removed - a scheme deprecated from
+    // Kotlin 2.0. The org.jetbrains.kotlin.plugin.compose plugin (applied at the top of this file)
+    // takes care of the Compose Compiler version automatically, aligned with the Kotlin version
+    // used by the project - it no longer needs to be declared here.
+
+    packaging {
+        resources {
+            excludes += '/META-INDEX/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+// AGP 9.x built-in Kotlin: android.kotlinOptions {} (used up to this project's previous version)
+// was removed - "Unresolved reference 'kotlinOptions'" is the real documented error (confirmed in
+// multiple real migrations to AGP 9.x) when that old block stays inside android {}. The equivalent
+// now is this root-level kotlin{} block, outside android {} - same value (JVM 17), only the
+// syntax/location changed.
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+    }
+}
+
+// AboutLibraries plugin configuration - same pattern as the real InstallerX-Revived (see the full
+// comment in the plugins above). duplicationMode MERGE + duplicationRule SIMPLE groups "practically
+// identical" dependencies (e.g. several androidx.compose.* submodules of the same version) into a
+// single entry on the licenses screen, instead of listing each Maven artifact individually - more
+// readable for whoever just wants to see "what this app uses and under which license".
+aboutLibraries {
+    library {
+        duplicationMode = com.mikepenz.aboutlibraries.plugin.DuplicateMode.MERGE
+        duplicationRule = com.mikepenz.aboutlibraries.plugin.DuplicateRule.SIMPLE
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.19.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.11.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.11.0'
+    implementation 'androidx.activity:activity-compose:1.13.0'
+
+    // Jetpack Compose BOM & M3 - 2026.08.00, a mais recente confirmada (blog oficial Android
+    // Developers, 12/08/2026: "Jetpack Compose August '26 release"), traz Compose 1.12.
+    implementation platform('androidx.compose:compose-bom:2026.08.00')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3'
+    // material-icons-core alone was not enough - Apps, ColorLens, Schedule, WarningAmber, Pause,
+    // PowerSettingsNew, Stop and RadioButtonUnchecked were missing (confirmed by a real compile
+    // error: "Unresolved reference"), so it went back to extended. shrinkResources (build.gradle,
+    // buildTypes.release) still cuts a lot of the unused excess in release - just not with the
+    // total guarantee individual artifacts would give.
+    implementation 'androidx.compose.material:material-icons-extended'
+
+    // DataStore & WorkManager - datastore-preferences remains stable at 1.0.0 (no newer major/minor
+    // confirmed on Maven Central); work-runtime-ktx updated to 2.11.2.
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+
+    // JSON serialization for export/import
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Shizuku & Root integration - dev.rikka.shizuku:13.1.5 was already the latest version
+    // (confirmed on Maven Central), no change. libsu updated from 5.2.1 to 6.0.0 (the project's
+    // official README, topjohnwu/libsu).
+    implementation 'dev.rikka.shizuku:api:13.1.5'
+    implementation 'dev.rikka.shizuku:provider:13.1.5'
+    implementation 'com.github.topjohnwu.libsu:core:6.0.0'
+
+    // Coil removed: the Exclusions list loads icons on demand in util/AppIconCache.kt (Coil's
+    // bitmap cache outlived the screen and every app's Drawable stayed in RAM). Open Source
+    // Licenses (About) - reintroduced: the plugin ID used before
+    // (com.mikepenz.aboutlibraries.plugin.android) was wrong, causing the earlier build failure;
+    // the correct one is com.mikepenz.aboutlibraries.plugin (see the root build.gradle), confirmed
+    // by reading the real build.gradle.kts of InstallerX-Revived, which uses exactly 15.2.0 with
+    // AGP 9.4.0 (newer than this project's) working for real. aboutlibraries-core generates/reads
+    // the catalog (R.raw.aboutlibraries, produced automatically by the plugin from the declared
+    // dependencies); aboutlibraries-compose-m3 provides the LibrariesContainer (the ready-made
+    // Compose Material3 screen) used in AboutScreen.kt.
+    implementation 'com.mikepenz:aboutlibraries-core:15.2.0'
+    implementation 'com.mikepenz:aboutlibraries-compose-m3:15.2.0'
+
+    // Glance and WorkManager removed: nothing in the code used them (the widget is RemoteViews) and
+    // WorkManager opened a Room database + threads at the start of EVERY app process.
+
+    // Debugging UI
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+}

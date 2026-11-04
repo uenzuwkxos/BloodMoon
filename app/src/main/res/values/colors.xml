@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Only used as the platform window background for the brief moment before Compose draws
+         its first frame (see themes.xml) - everything else is themed in ui/theme/Theme.kt. -->
+    <color name="window_background_neutral">#F8F3F2</color>
+
+    <!-- Widget colors: RemoteViews can't consume Compose's ColorScheme directly (it's a
+         completely separate rendering pipeline, drawn by the launcher process rather than this
+         app's own Activity), so the widget gets its own small, fixed palette instead - matching
+         the app's crimson/near-black identity so it doesn't look like a different app. -->
+    <color name="widget_background">#1A0E10</color>
+    <color name="widget_text_primary">#F5EDEE</color>
+    <color name="widget_text_secondary">#B79399</color>
+    <color name="widget_accent">#D50000</color>
+    <color name="widget_accent_paused">#FF9800</color>
+    <color name="widget_button_off">#3A2226</color>
+</resources>

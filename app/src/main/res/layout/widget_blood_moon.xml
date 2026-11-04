@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Blood Moon widget. RemoteViews only accepts a small set of Views - no Compose. Rows: header
+    (moon, name, state, power), colors, intensity, tone and shortcuts (Double, Gray, Extra, System).
+    The rows below the header have equal layout_weight, so they split the leftover height - no empty
+    space at the bottom. The provider hides the rows that do not fit when the widget is resized
+    down.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical"
+    android:padding="14dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/widget_logo"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_tile_moon" />
+
+        <LinearLayout
+            android:id="@+id/widget_open_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/widget_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@string/app_name"
+                android:textColor="@color/widget_text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/widget_status_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/widget_pill_off"
+                android:maxLines="1"
+                android:paddingStart="10dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="2dp"
+                android:textColor="@color/widget_text_primary"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                tools:text="Ativo · 60%" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/widget_toggle_button"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:background="@drawable/widget_toggle_button_off"
+            android:contentDescription="@string/home_toggle_filter"
+            android:padding="12dp"
+            android:src="@drawable/ic_widget_power" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/widget_row_colors"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/widget_color_black"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/widget_dot_ring_off"
+            android:contentDescription="@null"
+            android:padding="4dp"
+            android:src="@drawable/widget_dot" />
+        <ImageView
+            android:id="@+id/widget_color_red"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/widget_dot_ring_off"
+            android:contentDescription="@null"
+            android:padding="4dp"
+            android:src="@drawable/widget_dot" />
+        <ImageView
+            android:id="@+id/widget_color_orange"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/widget_dot_ring_off"
+            android:contentDescription="@null"
+            android:padding="4dp"
+            android:src="@drawable/widget_dot" />
+        <ImageView
+            android:id="@+id/widget_color_yellow"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/widget_dot_ring_off"
+            android:contentDescription="@null"
+            android:padding="4dp"
+            android:src="@drawable/widget_dot" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/widget_row_int"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/widget_int_label"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textColor="@color/widget_text_primary"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/widget_int_minus"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:background="@drawable/widget_step_button"
+            android:gravity="center"
+            android:text="−"
+            android:textColor="@color/widget_text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/widget_int_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:max="100"
+            android:progress="50"
+            android:progressDrawable="@drawable/widget_progress" />
+
+        <TextView
+            android:id="@+id/widget_int_plus"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:background="@drawable/widget_step_button"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="@color/widget_text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/widget_row_tone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/widget_tone_label"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textColor="@color/widget_text_primary"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/widget_tone_minus"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:background="@drawable/widget_step_button"
+            android:gravity="center"
+            android:text="−"
+            android:textColor="@color/widget_text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/widget_tone_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:max="100"
+            android:progress="50"
+            android:progressDrawable="@drawable/widget_progress" />
+
+        <TextView
+            android:id="@+id/widget_tone_plus"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:background="@drawable/widget_step_button"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="@color/widget_text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/widget_row_toggles"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/widget_opt_double"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/widget_pill_off"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/widget_opt_double"
+            android:textColor="@color/widget_text_primary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/widget_opt_grayscale"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/widget_pill_off"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/widget_opt_grayscale"
+            android:textColor="@color/widget_text_primary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/widget_opt_dim"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/widget_pill_off"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/widget_opt_dim"
+            android:textColor="@color/widget_text_primary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/widget_opt_system"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/widget_pill_off"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/widget_opt_system"
+            android:textColor="@color/widget_text_primary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

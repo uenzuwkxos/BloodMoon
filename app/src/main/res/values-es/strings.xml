@@ -1,0 +1,245 @@
+<resources>
+    <string name="app_name">Blood Moon</string>
+
+    <string name="action_ok">Aceptar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_close">Cerrar</string>
+    <string name="action_save">Guardar</string>
+    <string name="action_confirm">Confirmar</string>
+    <string name="action_activate">Activar</string>
+    <string name="action_deactivate">Desactivar</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="action_pause">Pausar</string>
+    <string name="action_resume">Reanudar</string>
+
+    <string name="nav_home">Inicio</string>
+    <string name="nav_profiles">Perfiles</string>
+    <string name="nav_schedule">Horarios</string>
+    <string name="nav_exclusions">Exclusiones</string>
+    <string name="nav_settings">Ajustes</string>
+
+    <string name="color_red">Rojo</string>
+    <string name="color_yellow">Amarillo</string>
+
+    <string name="home_toggle_filter">Activar o desactivar el filtro</string>
+    <string name="home_quick_adjustments">Ajustes</string>
+    <string name="home_advanced_features">Funciones avanzadas</string>
+    <string name="home_intensity">Intensidad</string>
+    <string name="home_tone">Tonalidad</string>
+    <string name="home_grayscale_title">Grayscale</string>
+    <string name="home_grayscale_desc">Deja toda la pantalla en blanco y negro, aplicado por el propio sistema</string>
+    <string name="home_privileged_toggle_needs_setup">Requiere ADB, Shizuku o Root.</string>
+    <string name="home_privileged_toggle_needs_setup_no_adb">Requiere Shizuku o Root para funcionar (ADB no es suficiente). Toca para configurarlo en Opciones.</string>
+
+    <!-- Navegación: posición de la barra -->
+    <string name="profiles_create">Crear perfil</string>
+    <string name="profiles_empty">Aún no hay perfiles guardados. Ajusta el filtro en la pantalla de inicio y toca + para guardar la configuración actual como un perfil.</string>
+    <string name="profiles_save_current">Guardar configuración actual</string>
+    <string name="profiles_enter_name">Dale un nombre a este perfil:</string>
+    <string name="profiles_name_label">Nombre del perfil</string>
+    <string name="profiles_active_badge">Perfil activo</string>
+    <string name="profiles_summary">%1$s %2$d%% • Tono %3$d%%</string>
+    <string name="schedule_enable">Programar horarios</string>
+    <string name="schedule_enable_desc">Enciende y apaga el filtro solo, en los horarios definidos abajo</string>
+    <string name="schedule_sunset_sunrise">Atardecer y amanecer</string>
+    <string name="schedule_sunset_sunrise_desc">Usa tu ubicación aproximada para calcular los horarios automáticamente</string>
+    <string name="schedule_sunset">Atardecer</string>
+    <string name="schedule_sunrise">Amanecer</string>
+    <string name="schedule_exact_alarm_title">Permiso de alarma exacta necesario</string>
+    <string name="schedule_exact_alarm_body">Sin él, Android puede retrasar unos minutos el encendido/apagado del filtro.</string>
+    <string name="schedule_exact_alarm_action">Conceder permiso</string>
+    <string name="schedule_grant_location">Conceder ubicación</string>
+    <string name="schedule_pick_time">Elegir horario</string>
+    <string name="schedule_hour_label">Hora</string>
+    <string name="schedule_minute_label">Minuto</string>
+    <string name="schedule_minute_step_label">Paso: %1$d min</string>
+    <string name="exclusions_usage_access_title">Acceso de uso necesario</string>
+    <string name="exclusions_usage_access_body">Para detectar qué app está en primer plano, Blood Moon necesita el permiso de Acceso de uso del sistema (o el servicio de accesibilidad de la app activo).</string>
+    <string name="exclusions_usage_access_action">Conceder acceso de uso</string>
+    <string name="exclusions_search_placeholder">Buscar aplicaciones instaladas</string>
+    <string name="exclusions_selected_count">%1$d app(s) seleccionada(s)</string>
+    <string name="exclusions_select_all">Marcar todos</string>
+    <string name="exclusions_deselect_all">Desmarcar todos</string>
+    <string name="exclusions_empty">No se encontraron aplicaciones</string>
+    <string name="settings_appearance">Apariencia</string>
+    <string name="settings_theme_mode">Tema</string>
+    <string name="theme_auto">Automático</string>
+    <string name="theme_light">Tema Claro</string>
+    <string name="theme_black">Tema Negro</string>
+    <string name="theme_dark">Tema Oscuro</string>
+
+    <string name="settings_language">Idioma</string>
+    <string name="language_system">Idioma del sistema</string>
+
+    <string name="settings_behavior">Comportamiento</string>
+    <string name="settings_pause_on_reboot">Pausar al reiniciar</string>
+    <string name="settings_pause_on_reboot_desc">No reactiva el filtro automáticamente después de que el dispositivo se reinicia</string>
+    <string name="settings_fade_duration">Duración del desvanecimiento</string>
+    <string name="settings_fade_duration_desc">Tiempo que tarda el filtro en aparecer y desaparecer suavemente al activar, desactivar o ajustar</string>
+    <string name="settings_fade_duration_value">%.1fs</string>
+
+    <string name="settings_advanced">Funciones avanzadas</string>
+    <string name="settings_advanced_explainer">Root, Shizuku y ADB conceden exactamente el mismo permiso del sistema (WRITE_SECURE_SETTINGS) por rutas distintas - usa el que tengas disponible.</string>
+    <string name="settings_shizuku">Shizuku</string>
+    <string name="settings_shizuku_available">Shizuku listo y con permiso concedido</string>
+    <string name="settings_shizuku_no_permission">Shizuku detectado, pero aún sin permiso - activa el interruptor para solicitarlo</string>
+    <string name="settings_shizuku_unavailable">Shizuku no está instalado o no se está ejecutando</string>
+    <string name="settings_shizuku_request">Pedir permiso a Shizuku</string>
+    <string name="settings_shizuku_dialog_prompt_toast">Toca para ver el aviso de permiso del Shizuku</string>
+    <string name="settings_shizuku_granted_toast">Shizuku activado con éxito</string>
+    <string name="settings_shizuku_denied_toast">Permiso denegado en el diálogo del Shizuku</string>
+    <string name="settings_shizuku_required_title">Se necesita Shizuku</string>
+    <string name="settings_shizuku_required_desc">Blood Moon usa Shizuku para ajustar configuraciones del sistema sin necesitar root. Sigue los pasos a continuación:</string>
+    <string name="settings_shizuku_step_install">Instalar la app Shizuku</string>
+    <string name="settings_shizuku_step_start">Iniciar el servicio de Shizuku</string>
+    <string name="settings_shizuku_step_grant">Conceder permiso para Blood Moon en Shizuku</string>
+    <string name="settings_root_granted_toast">Root activado con éxito</string>
+    <string name="settings_root_denied_toast">Acceso root denegado o no disponible</string>
+    <string name="settings_root">Root</string>
+    <string name="settings_root_checking">Comprobando acceso root…</string>
+    <string name="settings_root_available">Acceso root disponible</string>
+    <string name="settings_root_unavailable">Acceso root no disponible en este dispositivo</string>
+    <string name="settings_adb">ADB</string>
+    <string name="settings_adb_ready">Permiso concedido</string>
+    <string name="settings_adb_not_ready">Toca para ver el comando</string>
+    <string name="settings_adb_panel_title">Conceder vía ADB</string>
+    <string name="settings_share_command">Compartir</string>
+    <string name="settings_extra_dim">Extra oscuro del sistema</string>
+    <string name="settings_grant_permission">Conceder permiso ahora</string>
+    <string name="settings_permission_granted">Permiso concedido con éxito</string>
+    <string name="settings_needs_restart">El comando se ejecutó, pero la app necesita reiniciarse para reconocer el nuevo permiso. Cierra y vuelve a abrir Blood Moon.</string>
+    <string name="settings_adb_info_body">¿Sin root ni Shizuku? Ejecuta este comando una vez, con el teléfono conectado a un ordenador:</string>
+    <string name="settings_copy_command">Copiar comando</string>
+    <string name="settings_command_copied">Comando copiado</string>
+    <string name="settings_system_color_adjustment">Calibrador de color real del sistema</string>
+    <string name="settings_system_color_adjustment_desc">Usa la inversión de colores nativa de Android, aplicada por el compositor - alcanza toda la pantalla, incluidas la barra de estado y los ajustes rápidos.</string>
+
+    <string name="settings_backup">Copia de seguridad y restauración</string>
+    <string name="settings_backup_desc">Guarda un archivo .json con todos tus ajustes, perfiles, horarios y exclusiones - consérvalo donde quieras.</string>
+    <string name="settings_export">Exportar</string>
+    <string name="settings_export_success">Copia de seguridad guardada con éxito</string>
+    <string name="settings_export_failed">No se pudo guardar el archivo</string>
+    <string name="settings_import">Importar</string>
+    <string name="settings_import_title">Importar configuración</string>
+    <string name="settings_import_read_failed">No se pudo leer el archivo seleccionado</string>
+    <string name="settings_import_success">Configuración restaurada con éxito</string>
+
+    <string name="settings_about_button">Acerca de Blood Moon</string>
+    <string name="about_version">Versión %1$s</string>
+    <string name="about_synopsis">Filtro para luz azul, fatiga visual y atenuador de pantalla.</string>
+    <string name="about_privacy">Esta app no recopila, almacena ni transmite ningún dato personal. Todos los ajustes se guardan únicamente en este dispositivo.</string>
+    <string name="about_license">Distribuido bajo la licencia GPL-3.0 o posterior.</string>
+    <string name="about_repo_link">Enlace del repositorio (próximamente)</string>
+
+    <string name="notification_channel_name">Filtro de pantalla</string>
+    <string name="notification_channel_description">Muestra el estado del filtro de pantalla mientras está activo</string>
+    <string name="notification_active">Filtro activo</string>
+    <string name="notification_paused">Filtro pausado</string>
+    <string name="notification_off">Filtro desactivado</string>
+    <string name="notification_permission_missing">Permite "Mostrar sobre otras apps" en los ajustes para que el filtro funcione</string>
+
+    <string name="widget_status_active">Blood Moon: ACTIVO (%1$d%%)</string>
+    <string name="widget_status_paused">Blood Moon: PAUSADO</string>
+    <string name="widget_status_off">Blood Moon: DESACTIVADO</string>
+    <string name="widget_hint">Toca para abrir o alternar</string>
+
+    <string-array name="day_abbreviations">
+        <item>Domingo</item>
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miércoles</item>
+        <item>Jueves</item>
+        <item>Viernes</item>
+        <item>Sábado</item>
+    </string-array>
+
+    <!-- Adicionadas/atualizadas -->
+    <string name="color_black">Negro</string>
+    <string name="color_orange">Naranja</string>
+    <string name="home_filter_color">Color del filtro</string>
+    <string name="home_double_filter_toggle">Filtro doble</string>
+    <string name="home_double_filter_desc">Superpone una segunda capa idéntica a la del filtro principal, haciendo los colores aún más intensos</string>
+    <string name="home_system_filter_title">Filtro del sistema</string>
+    <string name="home_system_filter_desc">Modifica directamente los colores RGB del sistema. Requiere Root.</string>
+    <string name="home_system_filter_needs_root">Requiere Root.</string>
+    <string name="home_extra_dim_unsupported_version">Requiere Android 12 o posterior</string>
+    <string name="settings_tv_power_title">Funciones de TV</string>
+    <string name="settings_tv_power_explainer">Solo para Android TV: usa el mismo acceso concedido arriba (Root, Shizuku o ADB) para apagar la TV automáticamente.</string>
+    <string name="settings_tv_auto_off_title">Apagar a una hora</string>
+    <string name="settings_tv_auto_off_desc_on">Se apaga todos los días a las %1$s</string>
+    <string name="settings_tv_auto_off_desc_off">Desactivado</string>
+    <string name="settings_tv_auto_off_change_time">Cambiar hora</string>
+    <string name="settings_tv_standby_title">Temporizador de sueño</string>
+    <string name="settings_tv_standby_desc">Apagar por inactividad</string>
+    <string name="settings_tv_standby_minutes_value">%1$d min</string>
+    <string name="about_privacy_title">Política de privacidad</string>
+    <string name="about_repo_title">Repositorio</string>
+    <string name="about_oss_licenses_title">Licencias de código abierto</string>
+    <string name="about_oss_licenses_screen_title">Licencias de código abierto</string>
+    <string name="about_screen_title">Acerca de</string>
+    <string name="about_oss_license_heading">Licencia</string>
+    <string name="about_oss_license_none">La biblioteca no informa su licencia</string>
+    <string name="about_oss_license_view">Ver texto de la licencia</string>
+    <string name="about_oss_license_website">Abrir sitio de la biblioteca</string>
+
+    <string name="accessibility_service_label">Blood Moon</string>
+    <string name="accessibility_service_description">Mantiene la escala de grises activa mientras el filtro está encendido y permite apagar la pantalla del televisor a la hora programada. No lee ni recopila el contenido de la pantalla.</string>
+
+    <string name="settings_a11y_overlay_title">Usar servicio de accesibilidad (recomendado)</string>
+    <string name="settings_a11y_overlay_desc">Dibuja el filtro mediante el servicio de accesibilidad: cubre todo el sistema y otras apps no lo eliminan. Se activa solo con ADB, Shizuku o Root.</string>
+
+    <string name="settings_diagnostic_title">Diagnóstico</string>
+    <string name="settings_diagnostic_desc">Útil para investigar cuando el filtro se apaga solo.</string>
+    <string name="settings_diagnostic_view">Ver registro de diagnóstico</string>
+    <string name="settings_diagnostic_share">Compartir registro</string>
+    <string name="settings_diagnostic_clear">Borrar registro</string>
+
+    <string name="exclusions_chip_filter">Filtro</string>
+    <string name="exclusions_chip_grayscale">Grises</string>
+    <string name="exclusions_chip_system">Sistema</string>
+
+    <string name="home_stable_mode_title">Activa el servicio de accesibilidad</string>
+    <string name="home_stable_mode_body">Sin él, el sistema u otras apps pueden eliminar el filtro y no cubre todo el sistema (como Ajustes), incluso con ADB o Shizuku activos.</string>
+    <string name="home_stable_mode_action">Abrir ajustes de accesibilidad</string>
+
+    <string name="tile_subtitle_active">Activo · %1$d%%</string>
+    <string name="tile_subtitle_paused">En pausa</string>
+    <string name="tile_subtitle_off">Apagado</string>
+
+    <string name="widget_opt_double">Doble</string>
+    <string name="widget_opt_grayscale">Grises</string>
+    <string name="widget_opt_dim">Extra</string>
+    <string name="widget_opt_system">Sistema</string>
+
+    <string name="notification_active_hint">Toca para abrir</string>
+
+    <string name="home_extra_dim_desc">Activa una opción del sistema para oscurecer aún más la pantalla.</string>
+    <string name="settings_tv_auto_off_desc">Apagar a una hora determinada</string>
+    <string name="settings_tv_auto_off_change_time_with">Cambiar hora (%1$s)</string>
+    <string name="home_stable_mode_dismiss">Ahora no</string>
+    <string name="exclusions_mark_all_filter">Marcar todos (Filtro)</string>
+    <string name="exclusions_unmark_all_filter">Desmarcar todos (Filtro)</string>
+    <string name="exclusions_mark_all_grayscale">Marcar todos (Grises)</string>
+    <string name="exclusions_unmark_all_grayscale">Desmarcar todos (Grises)</string>
+    <string name="exclusions_include_system">Incluir apps del sistema</string>
+    <string name="settings_adb_disabled">Desactivado (el permiso sigue concedido en el sistema)</string>
+    <string name="settings_help_title">Ayuda</string>
+    <string name="settings_help_a11y_q">¿Por qué se necesita la accesibilidad?</string>
+    <string name="settings_help_a11y_a">El servicio de accesibilidad mejora la experiencia. Con él activo, el filtro se dibuja en una capa por encima de las ventanas normales y puede cubrir todo el sistema (Ajustes, diálogos de permisos y otras pantallas bloqueadas), algo que la superposición normal no hace, ni siquiera con ADB o Shizuku. También evita que otras apps del sistema o el propio sistema cierren o ataquen la superposición. La app no lee ni recopila el contenido de la pantalla.</string>
+    <string name="settings_help_random_q">¿Por qué el filtro se desactiva de repente?</string>
+    <string name="settings_help_random_a">Algunos dispositivos (sobre todo TVs) tienen bloatware o apps del sistema que cierran las ventanas flotantes normales, o el propio sistema las elimina. Para solucionarlo, Blood Moon necesita el permiso de accesibilidad. Si no quieres concederlo, o lo concediste y alguna app sigue interfiriendo, informa del problema en el GitHub del proyecto o busca esa app y elimínala bajo tu propia responsabilidad: el Diagnóstico ayuda a identificarla.</string>
+
+    <string name="schedule_profiles_title">Perfil programado</string>
+    <string name="schedule_profiles_desc">Activa un perfil guardado a una hora y en los días de la semana que elijas. Si quieres, define también una hora de finalización para apagar el filtro.</string>
+    <string name="schedule_profiles_use_end">Definir hora de finalización</string>
+    <string name="schedule_profiles_pick">Elige el perfil</string>
+    <string name="schedule_profiles_add">Añadir</string>
+    <string name="schedule_profiles_empty">No hay agendas de perfil guardadas.</string>
+    <string name="schedule_profiles_no_profiles">Guarda un perfil en la pestaña Perfiles para poder programarlo.</string>
+    <string name="schedule_profiles_removed">Perfil eliminado</string>
+    <string name="schedule_profiles_apply_on_boot">Aplicar última agenda al iniciar</string>
+    <string name="schedule_profiles_apply_on_boot_desc">Útil si el dispositivo estaba apagado a la hora programada.</string>
+    <string name="duration_minutes">%1$d min</string>
+    <string name="duration_hours">%1$dh</string>
+    <string name="duration_hours_minutes">%1$dh %2$dmin</string>
+</resources>
