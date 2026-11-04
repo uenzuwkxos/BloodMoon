@@ -948,9 +948,7 @@ private const val SHIZUKU_PACKAGE_NAME = "moe.shizuku.privileged.api"
 private const val SHIZUKU_PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=$SHIZUKU_PACKAGE_NAME"
 private const val SHIZUKU_GITHUB_RELEASES_URL = "https://github.com/thedjchi/Shizuku/releases"
 
-// TODO: placeholder - I have not received the real URL of the Blood Moon repository yet. Replace it
-// before publishing; until then the "Repository" card in About opens this GitHub search page.
-private const val REPO_URL = "https://github.com/search?q=Blood+Moon+bloodmoon.app&type=repositories"
+private const val REPO_URL = "https://github.com/uenzuwkxos/BloodMoon"
 
 /**
  * Used to be AboutDialog (an AlertDialog) - it became its own full screen (explicit request), with
