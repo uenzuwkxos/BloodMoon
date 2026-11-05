@@ -3,7 +3,13 @@
 **Blue-light, eye-strain and screen-dimming filter** for Android and Android TV.
 100% local: **no internet, no accounts, no ads, no data collection.**
 
----
+## 📸 Screenshots
+
+<p>
+  <img src="screenshots/1home.png" width="250">
+  <img src="screenshots/2schedule.png" width="250">
+  <img src="screenshots/3hometv.png" width="500">
+</p>
 
 ## ✨ Features
 
