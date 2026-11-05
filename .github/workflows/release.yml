@@ -29,6 +29,10 @@ jobs:
       - name: Validate the Gradle Wrapper
         uses: gradle/actions/wrapper-validation@v4
 
+      # Git on Windows does not keep the executable bit, so gradlew would fail with "Permission denied".
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
       - name: Restore the keystore from the Secret
         run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > "$RUNNER_TEMP/release.jks"
 
