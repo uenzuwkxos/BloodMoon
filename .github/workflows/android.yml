@@ -24,6 +24,15 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x gradlew
 
+      # The app's build.gradle points the debug signing config at ~/.android/debug.keystore, which
+      # exists on a developer machine (Android Studio creates it) but not on a fresh CI runner.
+      - name: Create the debug keystore
+        run: |
+          mkdir -p ~/.android
+          keytool -genkeypair -v -keystore ~/.android/debug.keystore -storepass android \
+            -keypass android -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname "CN=Android Debug,O=Android,C=US"
+
       - name: Build (debug)
         run: ./gradlew assembleDebug
 
