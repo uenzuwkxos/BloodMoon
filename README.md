@@ -25,7 +25,7 @@
 
 ## 🤖 Made with AI
 
-This app was built by AI (Claude, by Anthropic), guided by a human who defined the features, tested the app on real devices and reported the bugs. Translations are AI-generated and may contain mistakes; corrections are welcome.
+This app was built by AI (Claude, by Anthropic), guided by a human. Translations are AI-generated and may contain mistakes; corrections are welcome.
 
 ## 📲 Installation
 
@@ -71,4 +71,4 @@ Issues and PRs are welcome. When reporting a problem, attach the report from *Op
 
 Licensed under the **GNU GPL v3**: see [LICENSE.md](LICENSE.md).
 
-Inspired by **[Red Moon](https://github.com/LibreShift/red-moon)** (LibreShift, GPLv3). The idea of keeping grayscale on through an accessibility service came from **[Grayscaler](https://github.com/C10udburst/Grayscaler)**. Third-party libraries and their licenses are listed in *Options › About › Open Source Licenses*. Thanks also to **[Shizuku](https://github.com/RikkaApps/Shizuku)** and **[libsu](https://github.com/topjohnwu/libsu)**.
+Inspired by **[Red Moon](https://github.com/LibreShift/red-moon)**. The idea of keeping grayscale on through an accessibility service came from **[Grayscaler](https://github.com/C10udburst/Grayscaler)**. Third-party libraries and their licenses are listed in *Options › About › Open Source Licenses*. Thanks also to **[Shizuku](https://github.com/RikkaApps/Shizuku)** and **[libsu](https://github.com/topjohnwu/libsu)**.
