@@ -1,17 +1,14 @@
-# 🌙 Blood Moon
-
-**Blue-light, eye-strain and screen-dimming filter** for Android and Android TV.
-100% local: **no internet, no accounts, no ads, no data collection.**
-
-## 📸 Screenshots
-
-<p>
-  <img src="screenshots/1home.png" width="250">
-  <img src="screenshots/2schedule.png" width="250">
-  <img src="screenshots/3hometv.png" width="500">
+<p align="center">
+  <img src="app/src/main/res/drawable-nodpi/ic_launcher_fg.png" alt="Blood Moon icon" width="128">
 </p>
 
-## ✨ Features
+<h1 align="center">Blood Moon</h1>
+
+<p align="center">Blue-light, eye-strain and screen-dimming filter for Android and Android TV.</p>
+
+---
+
+## Features
 
 - **Color filter** in 4 tones (Black, Red, Orange, Yellow) with **Intensity** and **Tone** sliders, a **Double filter** (two identical layers for even stronger colors) and a smooth fade when turning on/off.
 - **Advanced features** (need ADB, Shizuku or Root): system **Extra Dim**, **Grayscale** and **System Filter** (Root; adjusts the system's RGB colors directly).
@@ -23,11 +20,7 @@
 - Light, Dark and Black (AMOLED) **themes**, 15 languages (pt, en, es, de, fr, zh, ja, ko, hi, ar, ru, id, it, nl, pl) and **D-pad** navigation with a focus indicator.
 - **Backup**: export/import everything as a JSON file.
 
-## 🤖 Made with AI
-
-This app was built by AI (Claude, by Anthropic), guided by a human. Translations are AI-generated and may contain mistakes; corrections are welcome.
-
-## 📲 Installation
+## Installation
 
 1. Download the latest APK from **[Releases](../../releases)** and install it.
 2. Grant **"Display over other apps"** and enable the **accessibility service** when the app asks (recommended, see below).
@@ -47,14 +40,14 @@ It **does not read or collect screen content** (`canRetrieveWindowContent="false
 
 With ADB, Shizuku or Root the app enables the service by itself; without them, enable it in *Settings › Accessibility*.
 
-## 🔒 Privacy and security
+## Privacy and security
 
 - **No internet permission**: the app never sends anything anywhere.
 - All data (settings, profiles, schedules, exclusions) stays **on the device only**; `allowBackup` is off.
 - Permissions and what they are for: `SYSTEM_ALERT_WINDOW` (draw the filter), `WRITE_SECURE_SETTINGS` (grayscale, extra dim, sleep timer; granted by you via ADB/Shizuku/Root), `PACKAGE_USAGE_STATS` (foreground app, alternative to accessibility), `ACCESS_COARSE_LOCATION` (compute sunset/sunrise **locally**), notifications, foreground service, `RECEIVE_BOOT_COMPLETED` and exact alarms (schedules).
 - *Options › Diagnostics* keeps a local log (service events, device model). It only leaves the device if **you** tap *Share*.
 
-## 🛠️ Building
+## Building
 
 Requirements: **JDK 21** (17+) and the Android SDK (compileSdk 37). `minSdk 28`.
 
@@ -63,12 +56,14 @@ Requirements: **JDK 21** (17+) and the Android SDK (compileSdk 37). `minSdk 28`.
 ./gradlew assembleRelease   # release APK
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Issues and PRs are welcome. When reporting a problem, attach the report from *Options › Diagnostics* (it contains no personal data).
 
-## 📜 License and credits
+> Disclaimer — This application was developed using AI and guided, tested, designed, and also built by me, the maintainer. Translations are AI-generated and may contain mistakes; corrections are welcome.
+
+## License and Acknowledgments
 
 Licensed under the **GNU GPL v3**: see [LICENSE.md](LICENSE.md).
 
-Inspired by **[Red Moon](https://github.com/LibreShift/red-moon)**. The idea of keeping grayscale on through an accessibility service came from **[Grayscaler](https://github.com/C10udburst/Grayscaler)**. Third-party libraries and their licenses are listed in *Options › About › Open Source Licenses*. Thanks also to **[Shizuku](https://github.com/RikkaApps/Shizuku)** and **[libsu](https://github.com/topjohnwu/libsu)**.
+Blood Moon is a spiritual successor to **[Red Moon](https://github.com/LibreShift/red-moon)** (LibreShift, GPLv3), surpassing it in practically every way. The idea of keeping grayscale on through an accessibility service came from **[Grayscaler](https://github.com/C10udburst/Grayscaler)**. Third-party libraries and their licenses are listed in *Options › About › Open Source Licenses*. Thanks also to **[Shizuku](https://github.com/RikkaApps/Shizuku)** and **[libsu](https://github.com/topjohnwu/libsu)**.
