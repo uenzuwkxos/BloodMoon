@@ -99,32 +99,32 @@ object DarkPalette {
 
 // ---- Preto (AMOLED) ----------------------------------------------------------------------
 object BlackPalette {
-    val primaryContainer = Color(0xFF3A0A16)
+    val primaryContainer = Color(0xFF2C0811)
     val onPrimaryContainer = Color(0xFFFFDADE)
     val secondary = Color(0xFFE0B8BD)
     val onSecondary = Color(0xFF3B2226)
-    val secondaryContainer = Color(0xFF211819)
+    val secondaryContainer = Color(0xFF120C0D)
     val onSecondaryContainer = Color(0xFFFFD9DD)
     val tertiary = Color(0xFFF1BF4D)
     val onTertiary = Color(0xFF3F2E00)
-    val tertiaryContainer = Color(0xFF3A2A00)
+    val tertiaryContainer = Color(0xFF2B1F00)
     val onTertiaryContainer = Color(0xFFFFDEA3)
 
     val background = Color(0xFF000000)
     val onBackground = Color(0xFFEDE0E0)
-    val surface = Color(0xFF0B090A)          // cards: near-black, just a hair above #000
+    val surface = Color(0xFF040303)          // cards: almost #000, barely a hint above it
     val onSurface = Color(0xFFEDE0E0)
-    val surfaceVariant = Color(0xFF151213)
+    val surfaceVariant = Color(0xFF090707)
     val onSurfaceVariant = Color(0xFFC4B1B2)
     val surfaceDim = Color(0xFF000000)
-    val surfaceBright = Color(0xFF1F1A1B)
+    val surfaceBright = Color(0xFF120F10)
     val containerLowest = Color(0xFF000000)
-    val containerLow = Color(0xFF050404)
-    val container = Color(0xFF0C0A0B)
-    val containerHigh = Color(0xFF131011)
-    val containerHighest = Color(0xFF1B1718)
+    val containerLow = Color(0xFF020101)
+    val container = Color(0xFF050404)
+    val containerHigh = Color(0xFF0A0808)
+    val containerHighest = Color(0xFF110E0F)
     val outline = Color(0xFF6A5A5C)
-    val outlineVariant = Color(0xFF241D1E)
+    val outlineVariant = Color(0xFF191314)
 
     val error = Color(0xFFFFB4AB)
     val onError = Color(0xFF690005)
