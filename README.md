@@ -8,6 +8,14 @@
 
 ---
 
+## Screenshots
+
+<p>
+  <img src="screenshots/1home.png" width="250">
+  <img src="screenshots/2schedule.png" width="250">
+  <img src="screenshots/3hometv.png" width="500">
+</p>
+
 ## Features
 
 - **Color filter** in 4 tones (Black, Red, Orange, Yellow) with **Intensity** and **Tone** sliders, a **Double filter** (two identical layers for even stronger colors) and a smooth fade when turning on/off.
